@@ -17,9 +17,17 @@ public class IOCTest {
 
 
     @Test
+    public void test03(){
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        Object person = ctx.getBean("person");
+        Object person2 = ctx.getBean("person");
+        System.out.println(person);
+        System.out.println(person2);
+    }
+    @Test
     public void test02(){
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        ctx.scan("com.ex");
+//        ctx.scan("com.ex");
         Arrays.stream(ctx.getBeanDefinitionNames()).forEach(System.out::println);
         BeanDefinition beanDefinition = ctx.getBeanDefinition("person");
         System.out.println("FactoryMethodName: " + beanDefinition.getFactoryMethodName());
