@@ -5,7 +5,7 @@ import com.ex.bean.Person;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScans({@ComponentScan(basePackages = {"com.ex"},includeFilters = {@ComponentScan.Filter(type=FilterType.CUSTOM, value ={MyFilterType.class} )})})
+//@ComponentScans({@ComponentScan(basePackages = {"com.ex"},includeFilters = {@ComponentScan.Filter(type=FilterType.CUSTOM, value ={MyFilterType.class} )})})
 public class AppConfig {
 
     @Bean
