@@ -1,5 +1,6 @@
 package com.ex;
 
+import com.config.App2Config;
 import com.config.AppConfig;
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -16,6 +17,12 @@ public class IOCTest {
 
 
 
+    @Test
+    public void test04(){
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(App2Config.class);
+//        ctx.getBeanFactoryPostProcessors().forEach(System.out::println);
+        Arrays.stream(ctx.getBeanDefinitionNames()).forEach(System.out::println);
+    }
     @Test
     public void test03(){
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
