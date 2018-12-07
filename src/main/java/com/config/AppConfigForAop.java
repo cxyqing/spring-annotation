@@ -3,6 +3,7 @@ package com.config;
 import com.aop.Calculator;
 import com.aop.CalculatorImpl;
 import com.aop.LogAspects;
+import com.aop.MathCalculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -12,13 +13,20 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class AppConfigForAop {
 
     @Bean
-    public Calculator calculator(){
+    public MathCalculator mathCalculator(){
+        MathCalculator mathCalculator = new MathCalculator();
+        return mathCalculator;
+    }
 
-        return new CalculatorImpl();
+    @Bean
+    public Calculator calculator(){
+        Calculator calculator = new CalculatorImpl();
+        return calculator;
     }
 
     @Bean
     public LogAspects logAspects(){
-        return new LogAspects();
+        LogAspects logAspects = new LogAspects();
+        return logAspects;
     }
 }

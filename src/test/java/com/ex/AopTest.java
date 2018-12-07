@@ -23,9 +23,15 @@ public class AopTest {
     }
 
     @Test
+    public void test04(){
+        MathCalculator mathCalculator = (MathCalculator) ctx.getBean("mathCalculator");
+        int result = mathCalculator.div(10, 2);
+        System.out.println(result);
+    }
+ @Test
     public void test03(){
         Calculator calculator = ctx.getBean(Calculator.class);
-        int result = calculator.div(10, 2);
+        int result = calculator.div(10, 0);
         System.out.println(result);
     }
 
