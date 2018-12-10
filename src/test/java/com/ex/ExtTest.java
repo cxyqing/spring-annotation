@@ -11,11 +11,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import javax.sql.DataSource;
 
 public class ExtTest {
-    private AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfigForExt.class);
+    private AnnotationConfigApplicationContext ctx;
 
 
     @Test
     public void test01(){
+        ctx = new AnnotationConfigApplicationContext(AppConfigForExt.class);
         ctx.publishEvent(new MyApplicationEvent(new Person("James",28)));
         ctx.close();
     }
