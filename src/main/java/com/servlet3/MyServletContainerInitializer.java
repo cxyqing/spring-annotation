@@ -17,7 +17,7 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
         ctx.addListener(UserListener.class);
         ServletRegistration.Dynamic userServlet = ctx.addServlet("userServlet", "com.servlet3.servlet.UserServlet");
         userServlet.addMapping("/userServlet");
-        FilterRegistration.Dynamic userFilter = ctx.addFilter("userFilter", new UserFilter());
-        userFilter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true,"/*");
+//        FilterRegistration.Dynamic userFilter = ctx.addFilter("userFilter", new UserFilter());
+//        userFilter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true,"/*");
     }
 }
